@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:9
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ROOT
+      MYSQL_DATABASE: devops
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pROOT"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  two-tier-backend:
+    build: .
+    container_name: two-tier-backend
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5000:5000"    

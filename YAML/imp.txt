@@ -1,0 +1,35 @@
+# Flow samjho:
+#services
+Yahan se sab start hota hai.
+Kitni services (app, db, redis) chalani hain.
+#build (ya image)
+Agar apna Dockerfile hai → build.
+Agar Docker Hub ki image use karni hai → image.
+#container_name
+Container ka naam kya hoga.
+#ports
+Host aur container ke ports connect hote hain.
+Example: 8080:8080
+#environment
+Environment variables pass karte hain.
+Jaise DB username, password, URL.
+#volumes
+Data ko persistent rakhna ya host ki files mount karna.
+#depends_on
+Kaunsi service pehle start honi chahiye.
+Example: App ko MySQL ke baad start karna.
+#networks
+Services aapas mein kis network par communicate karengi.
+#restart
+Container crash ho ya server reboot ho to dobara kaise start hoga.
+
+#services:
+ ##  build:
+   # image:
+    ##container_name:
+    #ports:
+    ##environment:
+    #volumes:
+    #depends_on:
+    #networks:
+    #restart:
