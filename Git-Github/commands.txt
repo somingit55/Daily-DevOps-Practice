@@ -14,3 +14,20 @@ git push -u origin main
 git remote add origin https://github.com/somingit55/expenses-tracker-web-app.git
 git branch -M main
 git push -u origin main
+
+#working on 2 branches first is main and second is dev both are on github
+
+
+git branch -- #check current branch   * astrik means working branch
+git switch -c dev     #create a dev branch 
+git push -u origin dev   #push on Github dev branch successfully
+
+Is command mein:
+- git → Git command
+- switch → branch switch karna
+- -c → nayi branch create karna
+- dev → branch ka naam
+
+git push origin main   #Local main ko push karegi
+git push origin dev    #Local dev ko push karegi 
+git switch dev         #Local dev per switch kregi 
