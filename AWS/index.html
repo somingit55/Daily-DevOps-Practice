@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudSpace | AWS S3</title>
+
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef4ff, #fdfbff);
+  color: #172554;
+  text-align: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.card {
+  background: white;
+  padding: 45px 30px;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 15px 45px #263b6318;
+}
+.tag {
+  color: #2563eb;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+h1 { font-size: 34px; margin: 18px 0 12px; }
+p { color: #64748b; line-height: 1.7; }
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 22px;
+  margin: 8px 4px 0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+.primary {
+  background: #2563eb;
+  color: white;
+}
+.secondary {
+  background: #eff6ff;
+  color: #2563eb;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px #2563eb30;
+}
+footer { margin-top: 25px; font-size: 12px; }
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="tag">☁ CLOUDSPACE</div>
+  <h1>Dream Big.<br>Store Smarter.</h1>
+  <p>A little space in the cloud.<br>
+  A limitless world of possibilities.</p>
+
+  <button class="primary"
+    onclick="alert('Welcome to CloudSpace!')">
+    Get Started ↗
+  </button>
+
+  <button class="secondary"
+    onclick="alert('Powered by Amazon S3')">
+    Learn More
+  </button>
+
+  <footer>✦ Crafted with passion · Hosted on AWS S3</footer>
+</div>
+</body>
+</html>

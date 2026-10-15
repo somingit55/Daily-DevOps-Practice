@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | Page Not Found</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #172554;
+  background: linear-gradient(135deg, #eaf2ff, #fdf2ff);
+}
+
+.card {
+  width: 90%;
+  max-width: 440px;
+  padding: 45px 25px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px #263b6318;
+}
+
+.icon { font-size: 55px; }
+
+h1 {
+  margin: 10px 0;
+  font-size: 76px;
+  color: #2563eb;
+}
+
+h2 { margin: 0 0 12px; }
+
+p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+a {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 24px;
+  color: white;
+  background: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+a:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #2563eb40;
+}
+
+small {
+  display: block;
+  margin-top: 25px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="icon">☁️</div>
+    <h1>404</h1>
+    <h2>Oops! Page Not Found</h2>
+
+    <p>
+      The page you're looking for doesn't exist
+      or may have been moved.
+      Let's get you back home!
+    </p>
+
+    <a href="./">← Back to Home</a>
+
+    <small>Powered by AWS S3 ✦</small>
+  </div>
+</body>
+</html>
