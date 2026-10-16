@@ -1,4 +1,4 @@
-# if you create a new repository on the command line
+#If you create a new Repository then run a command first time
 
 echo "# expenses-tracker-web-app" >> README.md
 git init
@@ -8,15 +8,13 @@ git branch -M main
 git remote add origin https://github.com/somingit55/expenses-tracker-web-app.git
 git push -u origin main
 
-
-#…or push an existing repository from the command line
+#Or push an existing repository from the command line
 
 git remote add origin https://github.com/somingit55/expenses-tracker-web-app.git
 git branch -M main
 git push -u origin main
 
 #working on 2 branches first is main and second is dev both are on github
-
 
 git branch -- #check current branch   * astrik means working branch
 git switch -c dev     #create a dev branch 
@@ -31,3 +29,45 @@ Is command mein:
 git push origin main   #Local main ko push karegi
 git push origin dev    #Local dev ko push karegi 
 git switch dev         #Local dev per switch kregi
+
+##Firstly save on dev Branch:
+
+git branch --show-current
+git status
+git add .
+git status
+git commit -m "Add Git,AWS S3,Python practice"
+git push origin dev
+
+All work save on Dev Branch 
+
+## Now How can I merge Dev and Main Branch on Github listed below:
+
+Step-1 Goto GitHub Repo Create Pull Request(PR) & New Pull Request
+Step-2 Select Branches:   Base->> main   Compare->> dev
+Step-3 Click on Create Pull Request & Set Title Name & Description 
+Step-4 Click on Merge Pull Request & Confirm Merge Request
+Step-5 Final run this below commands
+git switch main
+git pull origin main
+
+## Changes in main and merge in dev without creating Pull Request listed below commands:
+
+Step-1
+
+git switch main
+git add .
+git commit -m "Update Git commands"
+git push origin main
+
+#Changes in Dev Now:
+
+Step-2
+
+git switch dev
+git pull origin dev
+git merge main
+git push origin dev
+
+git status
+git branch --show-current
