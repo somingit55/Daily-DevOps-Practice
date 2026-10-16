@@ -30,4 +30,4 @@ Is command mein:
 
 git push origin main   #Local main ko push karegi
 git push origin dev    #Local dev ko push karegi 
-git switch dev         #Local dev per switch kregi 
+git switch dev         #Local dev per switch kregi
