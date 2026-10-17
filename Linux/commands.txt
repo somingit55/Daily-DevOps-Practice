@@ -1,5 +1,60 @@
 Here the Linux Ubuntu Commands:
 
+If you have Fresh AWS Ubuntu EC2 Virtual Server then run and understands below three commnads:
+
+1-  sudo apt update (Package list refresh karo) 
+
+    Repository indexes refresh hongi,Package information refresh karne ke liye
+    App Store se check karna ki apps ke kaun-se naye versions available hain (Abhi Apps update ni ue hai Ok )
+    /var/lib/apt/lists/   Package list yaha store hoti hai command chalane k baad
+
+2-  apt list --upgradable (Available upgrades check karo)
+
+    Ye available upgrades ki list dikhata hai. Output empty ho to currently listed packages mein koi upgrade available nahi hai.
+
+3-  sudo apt upgrade  (Packages upgrade karo)
+
+    Un apps ke available updates install karna. 
+    APT changes ka summary aur confirmation maang sakta hai.-y dene par aam confirmation prompts automatically accept ho jaate hain.
+
+4- When you install Nginx on Fresh Ec2 Server which version will be download:
+
+ubuntu@ip-172-31-8-52:~$ apt policy nginx
+nginx:
+  Installed: (none)
+  Candidate: 1.28.3-2ubuntu1.11
+  Version table:
+     1.28.3-2ubuntu1.11 500
+        500 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 Packages
+        500 http://security.ubuntu.com/ubuntu resolute-security/main amd64v3 Packages
+     1.28.3-2ubuntu1 500
+        500 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 Packages
+
+Upar Commands ka mtlb smjho:
+
+Installed: (none) — Nginx abhi tumhare EC2 par install nahi hai.
+Candidate: 1.28.3-2ubuntu1.11 — APT ke hisaab se abhi install karne ke liye preferred package version ye hai.
+
+Configured repositories = Ubuntu 26.04 LTS → codename resolute  ---> resolute, resolute-updates, resolute-security 
+
+Yaad rakho: Version table = available versions ki list; Candidate = APT ka preferred version download krega 
+
+dpkg — installed package check karta hai  (dpkg -l nginx)
+
+apt — repository mein available package check karta hai (apt policy nginx)
+
+
+APT vs dpkg
+APT	dpkg
+Repository se packages dhoondhta hai	Local .deb package install kar sakta hai
+Internet se packages download kar sakta hai	Khud repository se download nahi karta
+Dependencies automatically resolve kar sakta hai	Dependencies ko khud automatically download nahi karta
+apt install nginx	dpkg -i package.deb
+
+   
+
+
+apt policy nginx  -- Check Version of apps 
 pwd - Show present working directory 
 ls -  Show all files and folder
 cd -  go in folder or directory and also

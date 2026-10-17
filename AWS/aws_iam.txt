@@ -1,0 +1,116 @@
+# Identity and Access Management (IAM)
+
+Definition:
+AWS Identity and Access Management (IAM) is a service that helps securely control who can access AWS resources and what actions they can perform.
+
+Use Cases:
+- Manage users, groups, and roles.
+- Assign permissions using policies.
+- Secure AWS resources.
+- Apply the principle of least privilege.
+
+## 1. Root User (Root Account)
+
+Definition:
+The Root User is the identity created when an AWS account is first registered. It has full access to the account, including certain tasks that require root-user credentials.
+
+Use Cases:
+- Initial account setup.
+- Changing account-level settings.
+- Closing the AWS account.
+- Performing tasks that specifically require root access.
+
+Note: Enable MFA and avoid using the root user for daily activities.
+
+## 2. User Group
+
+Definition:
+An IAM User Group is a collection of IAM users who share common permissions through policies attached to the group.
+
+Use Cases:
+- Managing permissions for Developers, DevOps, and Admin teams.
+- Assigning permissions to multiple users easily.
+- Simplifying permission management.
+
+## 3. IAM User
+
+Definition:
+An IAM User is an identity created in an AWS account for a person or workload that needs access to AWS resources.
+
+Credentials may include:
+- Password for AWS Management Console access.
+- Access keys for CLI or API access.
+
+Use Cases:
+- Providing access to users who need IAM identities.
+- Managing individual user permissions.
+- Supporting workloads that require IAM user credentials.
+
+Note: For workloads, IAM roles are generally preferred over long-term access keys.
+
+## 4. IAM Role
+
+Definition:
+An IAM Role is an identity with specific permissions that can be assumed by a trusted user, AWS service, or external identity to obtain temporary security credentials.
+
+Use Cases:
+- Allowing EC2 instances to access S3.
+- Giving Lambda functions permission to use AWS services.
+- Enabling cross-account access.
+- Providing access to federated users.
+
+## 5. IAM Policy
+
+Definition:
+An IAM Policy is a JSON document that defines which actions are allowed or denied on specific AWS resources.
+
+A policy mainly contains:
+- Effect: Allow or Deny.
+- Action: What operations can be performed.
+- Resource: Which AWS resources are affected.
+- Condition: Optional rules that control when permissions apply.
+
+Use Cases:
+- Allowing EC2 to access a specific S3 bucket.
+- Restricting users from deleting resources.
+- Applying least-privilege permissions.
+
+## 6. Identity Provider (IdP)
+
+Definition:
+An Identity Provider is a service that authenticates users and enables them to access AWS through federated identity, often without creating separate IAM users for each person.
+
+Examples:
+- Microsoft Entra ID.
+- Okta.
+- Google, when configured as a supported identity provider.
+
+Use Cases:
+- Enabling Single Sign-On (SSO).
+- Connecting an organization's identity system to AWS.
+- Providing access to AWS for external or organizational users.
+
+## 7. MFA (Multi-Factor Authentication)
+
+Definition:
+MFA is a security feature that requires an additional verification factor, such as an authenticator code or security key, beyond the password.
+
+Examples:
+- Password + authenticator app code.
+- Password + security key.
+
+Use Cases:
+- Protecting the root user.
+- Securing IAM user accounts.
+- Reducing the risk of unauthorized access if a password is compromised.
+
+# Quick Interview Revision
+
+- IAM: Controls who can access AWS resources and what they can do.
+- Root User: The original identity created with the AWS account.
+- User Group: A collection of IAM users with shared permissions.
+- IAM User: An identity for a person or workload.
+- IAM Role: Provides temporary credentials to a trusted identity.
+- IAM Policy: Defines allowed and denied actions.
+- Identity Provider: Authenticates users for federated access.
+- MFA: Adds an extra verification factor for security.

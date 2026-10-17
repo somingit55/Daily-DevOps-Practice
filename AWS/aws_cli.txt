@@ -1,0 +1,14 @@
+AWS CLI (Command Line Interface)
+
+Definition:
+AWS CLI is a tool that allows users to manage and interact with AWS services using commands in a terminal.
+
+Use Cases:
+- Manage S3 buckets and files.
+- Start and stop EC2 instances.
+- Check AWS identity and permissions.
+- Automate AWS tasks using scripts.
+- Manage AWS resources without using the AWS Console.
+
+Example:
+aws s3 ls
