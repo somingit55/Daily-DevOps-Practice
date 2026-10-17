@@ -1,0 +1,59 @@
+AWS EC2 Console
+
+1. Dashboard
+2. AWS Global View
+3. Events
+
+4. Instances
+- Instances
+- Instance Types
+- Launch Templates
+- Spot Requests
+- Savings Plans
+- Reserved Instances
+- Dedicated Hosts
+- Capacity Reservations
+- UltraServers
+
+5. Images
+- AMIs
+- AMI Catalog
+
+6. Elastic Block Store
+- Volumes
+- Snapshots
+- Lifecycle Manager
+
+7. Network & Security
+- Security Groups
+- Elastic IPs
+- Placement Groups
+- Key Pairs
+- Network Interfaces
+
+8. Load Balancing
+- Load Balancers
+- Target Groups
+- Trust Stores
+
+9. Auto Scaling
+- Auto Scaling Groups
+
+
+
+
+what is why is AWS EC2 purpose kya hai use case pricing and security kya  hai
+
+# When you launch first ec2 virtual ubuntu server you will interact many terms:
+
+## Name and tags of server
+## Name of AMI(Amazon Machine Image) like as Ubuntu Linux Windows Mac
+## Instance Types (t2 t3 micro medium large etc )
+## Key Pair
+## Network Settings like VPC Subnet Firewall Security Group
+## Configure Storage by default Root EBS 
+## File System
+
+# Key Points of AWS EC2
+Aws ec2 service is region specific service 
+
