@@ -1,0 +1,84 @@
+Definition of CloudWatch:
+
+Amazon CloudWatch is a monitoring and observability service provided by AWS. It helps us monitor AWS resources and applications by collecting metrics, logs, and events. 
+It helps us identify performance issues and create alarms when a metric crosses a defined threshold.
+
+Purpose of CloudWatch:
+
+We use CloudWatch to:
+
+- Monitor server CPU and memory usage.
+- Monitor disk space and network traffic.
+- Collect and analyze application logs.
+- Detect performance issues and errors.
+- Create alarms and send notifications using Amazon SNS.
+- Troubleshoot server and application problems.
+
+Use cases of CloudWatch
+
+1. Server monitoring: Check whether an EC2 server is using too much CPU.
+2. Memory monitoring: Check RAM usage using CloudWatch Agent metrics.
+3. Disk monitoring: Check how much disk space is used.
+4. Application monitoring: Check application logs and errors.
+5. Alerting: Send notifications when CPU usage crosses a threshold.
+6. Troubleshooting: Identify when and why a server or application has a problem.
+
+What do we monitor in CloudWatch?
+
+Metric	        What does it tell us?
+
+CPUUtilization --	How much CPU capacity an EC2 instance is using, in percentage.
+mem_used_percent--	What percentage of RAM is being used.
+disk_used_percent--	What percentage of disk space is being used on a mounted filesystem.
+usage_user--	    CPU time spent running user-space processes, such as applications.
+usage_system--	    CPU time spent running operating system kernel processes.
+NetworkIn--	        Amount of data received by the instance over the network.
+NetworkOut--	    Amount of data sent by the instance over the network.
+DiskReadBytes--	    Number of bytes read from EC2 instance storage volumes.
+DiskWriteBytes--	Number of bytes written to EC2 instance storage volumes.
+
+What is CloudWatch Agent?
+
+CloudWatch Agent is software installed on an EC2 instance or server to collect system-level metrics and logs and send them to Amazon CloudWatch.
+By default, EC2 provides basic metrics such as CPU utilization, network traffic, and disk I/O. It does not automatically provide guest operating system RAM utilization.
+
+Why do we use CloudWatch Agent?
+
+- To monitor RAM usage.
+- To monitor filesystem and disk space usage.
+- To collect operating system and application logs.
+- To collect additional system-level metrics.
+- To troubleshoot performance issues.
+
+How does CloudWatch Agent work?
+
+EC2 Instance / Server (CPU, RAM, disk and log data)
+
+CloudWatch Agent (Collects configured metrics and logs)
+
+Amazon CloudWatch (Metrics, logs, dashboards and alarms)
+
+
+6. What is a CloudWatch Alarm?
+A CloudWatch Alarm monitors a metric and changes its state when a defined condition is met.
+
+Example: If EC2 CPU utilization stays above 80% for 5 minutes, CloudWatch can trigger an alarm and send an email notification through Amazon SNS, if configured.
+
+7. Which charts do we use?
+Chart	Purpose
+Line chart	Monitor CPU and RAM usage over time.
+Bar chart	Compare CPU usage between servers.
+Data table	View exact metric values.
+Stacked area chart	Compare the contribution of multiple series over time.
+Pie chart	Show proportions of a whole; less useful for time-based monitoring.
+Interview tip: For CPU and RAM monitoring, a Line chart is usually the best starting point because it shows usage trends and spikes over time.
+
+Short professional interview answer:
+
+Amazon CloudWatch is an AWS monitoring and observability service used to monitor the performance and health of AWS resources and applications. It collects metrics, logs, and events, and helps us create alarms to detect issues.
+
+We use CloudWatch to monitor CPU utilization, memory usage, disk space, network traffic, and application logs. We can also create dashboards and receive alerts when metrics cross defined thresholds.
+
+The CloudWatch Agent is installed on a server to collect additional system-level metrics, such as RAM and disk usage, and logs that are not available through standard EC2 metrics.
+For example, if CPU utilization exceeds 80% for 5 minutes, CloudWatch can trigger an alarm and send a notification through Amazon SNS.
+
