@@ -71,3 +71,9 @@ git push origin dev
 
 git status
 git branch --show-current
+
+
+Check both branches commits are same or not:
+
+git rev-list --left-right --count main...dev
+git diff main dev

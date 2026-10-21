@@ -1,0 +1,84 @@
+AWS Interview Notes — Definition, Purpose & Use Case
+
+1. DNS (Domain Name System)
+Definition: DNS translates domain names into IP addresses or other destination information.
+
+Purpose: To help users access websites using easy-to-remember domain names.
+Use Case: Mapping a website domain to an Application Load Balancer.
+
+2. DNS Lookup
+Definition: DNS lookup is the process of retrieving DNS records associated with a domain name.
+
+Purpose: To find the destination information for a domain.
+Use Case: When a user enters www.example.com, the browser uses DNS resolution to find where to connect.
+
+3. ALB DNS Name
+Definition: An ALB DNS name is an AWS-provided hostname used to access an Application Load Balancer.
+
+Purpose: To provide a hostname through which users can reach an application.
+Use Case: Opening the application using the ALB DNS name without configuring a custom domain.
+
+4. Amazon Route 53
+Definition: Route 53 is AWS's scalable DNS and domain-routing service used to manage DNS records.
+
+Purpose: To connect domain names with AWS resources and route users to the correct destination.
+Use Case: Creating an Alias record to map www.example.com to an ALB.
+
+5. Application Load Balancer (ALB)
+Definition: An ALB is a Layer 7 load balancer that distributes HTTP/HTTPS requests across multiple targets based on request-routing rules.
+
+Purpose: To distribute application traffic, improve availability, and route requests efficiently.
+Use Case: Distributing incoming requests between two EC2 instances running a website.
+
+6. Target Group
+Definition: A Target Group is a collection of registered targets, such as EC2 instances, to which a load balancer forwards requests.
+
+Purpose: To manage backend targets, perform health checks, and route traffic to healthy targets.
+Use Case: Registering two EC2 instances in a Target Group so the ALB can send requests to them.
+
+7. Nginx
+Definition: Nginx is a web server that can serve static content and act as a reverse proxy.
+
+Purpose: To handle HTTP/HTTPS requests and deliver web content to users.
+Use Case: Installing Nginx on EC2 to host web pages such as “Hello from Server 1” and “Hello from Server 2”.
+
+8. Security Group
+Definition: A Security Group is a stateful virtual firewall that controls inbound and outbound traffic for AWS resources.
+
+Purpose: To allow only the required network traffic and restrict unauthorized access.
+Use Case: Allowing HTTP/HTTPS traffic to the ALB and allowing EC2 web traffic only from the ALB's Security Group.
+
+9. TLS Termination at ALB
+Definition: TLS termination at an ALB means the load balancer decrypts incoming HTTPS traffic using an SSL/TLS certificate and then forwards the request to backend targets.
+
+Purpose: To secure client connections and centralize certificate management.
+Use Case: Configuring an ACM certificate on the ALB's HTTPS listener on port 443 and forwarding requests to EC2 over HTTP port 80.
+
+10. TLS Termination at Nginx
+Definition: TLS termination at Nginx means Nginx uses an SSL/TLS certificate to decrypt incoming HTTPS traffic before processing the request.
+
+Purpose: To secure connections directly to the web server.
+Use Case: Configuring HTTPS on Nginx when clients connect directly to an EC2 web server.
+
+11. TLS Termination at CloudFront
+Definition: CloudFront terminates TLS when it establishes and decrypts an HTTPS connection with the viewer before forwarding the request to the origin.
+
+Purpose: To secure viewer connections and deliver content through AWS edge locations.
+Use Case: Serving a website securely through CloudFront with an HTTPS certificate.
+
+12. TLS Termination at Network Load Balancer (NLB)
+Definition: An NLB can terminate TLS connections when configured with a TLS listener, decrypting traffic before forwarding it to targets.
+
+Purpose: To handle TLS connections while providing high-performance Layer 4 traffic distribution.
+Use Case: Using an NLB TLS listener to accept encrypted client connections and forward traffic to backend targets.
+
+
+Your practical: Complete request flow
+User → DNS Lookup → Route 53 DNS Record → ALB → Target Group → EC2 → Nginx → Response
+
+- Route 53 maps the custom domain to the ALB.
+- The ALB receives the request and distributes it to a healthy EC2 instance.
+- Nginx serves the requested web page.
+- Security Groups control which connections are allowed.
+- If HTTPS is configured on the ALB, TLS terminates there; the ALB-to-EC2 connection in your current setup uses HTTP on port 80.
+

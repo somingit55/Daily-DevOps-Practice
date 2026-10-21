@@ -59,4 +59,3 @@ pwd - Show present working directory
 ls -  Show all files and folder
 cd -  go in folder or directory and also
 cd .. go one step backward
- 

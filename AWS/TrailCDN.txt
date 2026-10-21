@@ -1,0 +1,121 @@
+Part 1: AWS concepts for interviews
+
+1. Amazon CloudFront
+
+Definition: Amazon CloudFront is a Content Delivery Network (CDN) service that delivers web content, including HTML pages, images, CSS, JavaScript, and videos, to users with low latency and high transfer speeds.
+
+Purpose
+- Reduce content delivery latency.
+- Cache frequently requested content at edge locations.
+- Reduce repeated requests to the origin server.
+- Improve website performance and global availability.
+Use cases
+- Hosting and accelerating static websites.
+- Delivering images, videos, and downloadable files.
+- Accelerating web applications and APIs.
+- Distributing content securely to users around the world.
+
+Interview answer:
+
+“Amazon CloudFront is a CDN service that caches and delivers content from AWS edge locations. When a user requests a file, CloudFront checks whether a valid cached copy is available. If it is, CloudFront can serve it from the cache. Otherwise, it retrieves the content from the configured origin, subject to the distribution's caching and access settings.”
+2. CloudFront Distribution
+Definition: A CloudFront distribution is the configuration that connects a content origin to CloudFront’s global delivery network and defines how requests are processed, cached, and delivered to users.
+
+Purpose
+- Define where the original content is stored.
+- Configure the CloudFront domain name.
+- Control cache behavior, allowed methods, and viewer access.
+- Configure HTTPS, security settings, and origin access.
+Use cases
+- Delivering a static website hosted in Amazon S3.
+- Accelerating content from an application server.
+- Serving different content paths using different cache behaviors.
+
+Interview answer:
+
+“A CloudFront distribution is the main configuration used to deliver content through CloudFront. It specifies the origin, cache behaviors, security settings, and delivery domain. In my practical, I created a distribution with an Amazon S3 bucket as the origin to serve an HTML website.”
+3. Origin Access Control (OAC)
+Definition: Origin Access Control is a CloudFront feature that allows CloudFront to securely access an Amazon S3 origin without requiring the bucket to be publicly accessible.
+
+Purpose
+- Keep the S3 bucket private.
+- Authorize CloudFront to retrieve objects from S3.
+- Reduce direct public access to origin content.
+- Support secure origin requests using AWS Signature Version 4.
+Use cases
+- Private S3 buckets serving public websites through CloudFront.
+- Secure delivery of static website assets.
+- Controlling access to S3-origin content through a CloudFront distribution.
+
+Interview answer:
+
+“Origin Access Control allows CloudFront to access a private S3 bucket securely. Instead of making the bucket public, I configured OAC and an S3 bucket policy that allows the designated CloudFront distribution to retrieve objects.”
+4. S3 Bucket Policy
+Definition: An S3 bucket policy is a resource-based JSON policy that defines who can access a bucket or its objects and which actions they are allowed or denied.
+
+Purpose
+- Grant or deny access to S3 resources.
+- Control permissions for specific AWS services, accounts, or principals.
+- Restrict access using conditions, such as a specific CloudFront distribution ARN.
+Use cases
+- Allowing a specific CloudFront distribution to read S3 objects.
+- Restricting access to a private bucket.
+- Enforcing security requirements for stored files.
+
+Interview answer:
+
+“An S3 bucket policy is a JSON-based resource policy used to control access to an S3 bucket and its objects. 
+In my practical, I configured a policy that grants the CloudFront service principal permission to perform s3:GetObject on the bucket objects, with a condition restricting access to my specific CloudFront distribution.”
+
+The key policy elements you worked with were:
+- Principal: The CloudFront service principal.
+- Action: s3:GetObject.
+- Resource: Objects inside your S3 bucket.
+- Condition: The specific CloudFront distribution ARN.
+This helps keep the origin private while allowing the authorized distribution to retrieve objects.
+
+5. AWS CloudTrail
+Definition: AWS CloudTrail is a service that records and helps you audit activity in your AWS account, including actions performed through the AWS Management Console, AWS CLI, SDKs, and other AWS services.
+
+Purpose
+- Track activity and API calls in an AWS account.
+- Identify who performed an action, what action was performed, and when it occurred.
+- Support security auditing, troubleshooting, and compliance.
+- Investigate unexpected changes to AWS resources.
+Use cases
+- Finding out who started or stopped an EC2 instance.
+- Investigating changes to S3 bucket policies.
+- Tracking CloudFront distribution configuration changes.
+- Auditing activity for security investigations.
+
+Interview answer:
+
+“AWS CloudTrail records account activity and API events, providing visibility into actions performed on AWS resources. 
+For example, if someone starts an EC2 instance, I can use CloudTrail Event history to search for the StartInstances event and review details such as the event time, user identity, and affected resource.”
+
+Important distinction: CloudTrail records activity; it does not automatically block unauthorized actions. 
+AWS CloudTrail Event history provides recent management events for the last 90 days in a selected Region. Creating a separate trail is not required just to use Event history.
+6. How these services work together
+User's browser
+
+Requests a website page
+
+CloudFront Distribution
+
+Routes requests and applies cache behaviors
+
+Origin Access Control (OAC)
+
+Secures CloudFront access to the S3 origin
+
+Private Amazon S3 bucket
+
+Stores the original HTML and other files
+
+
+AWS CloudTrail
+
+Records supported AWS API activity, such as changes to bucket policies and CloudFront distributions.
+
+
+Remember: CloudFront delivers content, S3 stores the original files, OAC secures origin access, the bucket policy grants permissions, and CloudTrail records account activity.
