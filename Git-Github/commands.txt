@@ -43,9 +43,9 @@ All work save on Dev Branch
 
 ## Now How can I merge Dev and Main Branch on Github listed below:
 
-Step-1 Goto GitHub Repo Create Pull Request(PR) & New Pull Request
-Step-2 Select Branches:   Base->> main   Compare->> dev
-Step-3 Click on Create Pull Request & Set Title Name & Description 
+Step-1 Goto GitHub Repo Click on Compare & Pull Request
+Step-2 Select Branches: Base->> main Compare->> dev
+Step-3 Set Title Name & Description & click on Create Pull Request
 Step-4 Click on Merge Pull Request & Confirm Merge Request
 Step-5 Final run this below commands
 git switch main
